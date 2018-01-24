@@ -113,8 +113,16 @@
       $("#todo-count").html(todoCount - completedCount);
     }
 
+    function toggleDone() {
+     var checkbox = this;
+
+     $(checkbox).parent().toggleClass("completed");
+     updateCounter();  
+    }
+
 
     $(document).ready(function() {
+      $("input[type=checkbox]").bind("change", toggleDone);
       updateCounter();
     });
   </script>
